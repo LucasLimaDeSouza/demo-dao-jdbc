@@ -11,6 +11,9 @@ public class Seller {
     private Double baseSalary;
     private Department department;
 
+    public Seller() {
+    }
+
     public Seller(int id, String name, String email, Date birthDate, Double baseSalary, Department department) {
         this.id = id;
         this.name = name;
@@ -84,12 +87,12 @@ public class Seller {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("id=" + id + "\n");
-        sb.append("name=" + name + "\n");
-        sb.append("email=" + email + "\n");
-        sb.append("birthDate=" + birthDate + "\n");
-        sb.append("baseSalary=" + baseSalary + "\n");
-        sb.append("department=" + department + "\n");
+        sb.append("id         = " + id + "\n");
+        sb.append("name       = " + name + "\n");
+        sb.append("email      = " + email + "\n");
+        sb.append("birthDate  = " + birthDate + "\n");
+        sb.append("baseSalary = " + baseSalary + "\n");
+        sb.append("department = " + department + "\n");
         return sb.toString();
     }
 
