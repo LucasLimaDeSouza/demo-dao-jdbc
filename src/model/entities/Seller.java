@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Seller {
-    private int id;
+    private Integer id;
     private String name;
     private String email;
     private Date birthDate;
@@ -14,8 +14,7 @@ public class Seller {
     public Seller() {
     }
 
-    public Seller(int id, String name, String email, Date birthDate, Double baseSalary, Department department) {
-        this.id = id;
+    public Seller(String name, String email, Date birthDate, Double baseSalary, Department department) {
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
