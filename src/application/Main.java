@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws ParseException {
-        SellerDao sellerDao = DaoFactory.createSellerDao();
+        SellerDao sellerDao = DaoFactory.createSellerDao();// Importante!!!!!!!!!!!!!!!
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Scanner sc = new Scanner(System.in);
         Locale.setDefault(Locale.US);
@@ -43,7 +43,7 @@ public class Main {
         /*
         System.out.println("Id: ");
         Integer id = sc.nextInt();
-        */
+
         System.out.println("Nome: ");
         String name = sc.next();
         System.out.println("Email: ");
@@ -67,5 +67,34 @@ public class Main {
             System.out.println(obj);
         }
 
+        System.out.println("******** Teste 5: Update **********************************");
+
+        System.out.println("Id: ");
+        Integer attid = sc.nextInt();
+        System.out.print("Nome: ");
+        String attname = sc.next();
+        System.out.println("Email: ");
+        String attemail = sc.next();
+        System.out.println("Data de Nascimento: ");
+        String attdata = sc.next();
+        Date attdataFormat = sdf.parse(attdata);
+        System.out.println("Salário: ");
+        Double attsalary = sc.nextDouble();
+
+        System.out.println("Departamento :");
+        System.out.println("Numero do Departamento: ");
+        Integer attdpId = sc.nextInt();
+
+        Department dp = new Department(attdpId,null);
+        sellerDao.update(new Seller(attid,attname,attemail,attdataFormat,attsalary,dp));
+
+        list = sellerDao.findAll();
+        for (Seller obj : list) {
+            System.out.println("------------- Seller: " + obj.getId() + " ----------------");
+            System.out.println(obj);
+        }
+        */
+
+        sellerDao.deleteById(12);
     }
 }
