@@ -95,7 +95,6 @@ public class SellerDaoJDBC implements SellerDao {
     @Override
     public void deleteById(Integer id) {
         PreparedStatement st = null;
-        ResultSet rs = null;
         try {
             st = conn.prepareStatement(
                     "DELETE FROM seller "
@@ -103,7 +102,6 @@ public class SellerDaoJDBC implements SellerDao {
             );
 
             st.setInt(1, id);
-
             st.executeUpdate();
         }
         catch (SQLException e) {
@@ -111,7 +109,6 @@ public class SellerDaoJDBC implements SellerDao {
         }
         finally {
             DB.closeStatement(st);
-            DB.closeResultSet(rs);
         }
     }
 

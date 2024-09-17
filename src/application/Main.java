@@ -95,6 +95,7 @@ public class Main {
         }
         */
 
-        sellerDao.deleteById(12);
+        System.out.println("******** Teste 6: Delete **********************************");
+        sellerDao.deleteById(11);
     }
 }
